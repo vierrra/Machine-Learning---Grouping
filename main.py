@@ -2,11 +2,11 @@ import pandas as pd
 from sklearn.cluster import KMeans
 
 csv = pd.read_csv('dados.csv', sep=(','))
-data = csv.values
-data = data[:,4:]
+data      = csv.values
+attributes = data[:,4:]
 
 model = KMeans(3)
-model.fit(data)
+model.fit(attributes)
 
 print('Informe os dados da postagem para que seja dito o grupo vinculado!')
 numberComments = int(input('Número de comentários: '))
